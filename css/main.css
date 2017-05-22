@@ -1,0 +1,1503 @@
+/*YLEISET MÄÄRITYKSET*/
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+min-width: 960px;
+background-color: #516F7C;
+font-family: 'Lato', Georgia, sans serif;
+font-size: 15px;
+color: #48505B;
+line-height: 1;
+}
+
+a {
+text-decoration: none;
+font-weight: bold;
+color: #48505B;
+}
+
+a:hover {
+color: #FFBF75;
+}
+
+ol, ul
+{
+list-style-type: none;
+padding-left: 0;
+margin-top: 0;
+}
+
+table, tr, td, th {
+margin: 0;
+padding: 0;
+border-collapse: collapse;
+border-spacing: 0;
+vertical-align: top;
+}
+
+input[type="text"] {
+font-family: 'Lato', Georgia, sans serif;
+font-size: 15px;
+font-weight: bold;
+color: #555;
+}
+
+input[type="submit"] {
+padding: 10px 15px 10px 15px;
+font-family: 'Lato', Georgia, sans serif;
+font-size: 15px;
+font-weight: bold;
+background-color: #00ABD1;
+color: #FFF;
+border: 0;
+cursor:pointer;
+transition: background-color .25s ease-in-out;
+-moz-transition: background-color .25s ease-in-out;
+-webkit-transition: background-color .25s ease-in-out;
+}
+
+input[type="submit"]:hover {
+background-color: #1BC3E5;
+}
+
+input[type="checkbox"] {
+display: none;
+}
+
+h1 {
+font-size: 27px;
+padding: 25px 0;
+margin: 0;
+}
+
+h2 {
+font-size: 22px;
+padding: 5px 0 10px 0;
+}
+
+h3 {
+font-size: 18px;
+padding: 20px 0;
+}
+
+h4 {
+font-size: 16px;
+padding: 10px 0;
+}
+
+p {
+letter-spacing: 0.5px;
+font-weight: normal;
+margin: 10px 0 10px 0;
+font-size: 15px;
+}
+
+textarea {
+font-family: 'Lato', Georgia, sans serif;
+-moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+}
+
+hr {
+margin: 20px 0;
+background-color: #F2F6F9;
+border: 0;
+width: 100%;
+height: 6px;
+clear: both;
+}
+
+.headText {
+font-size: 23px;
+margin: 0 0 20px 0;
+letter-spacing: normal;
+}
+
+/*Kustomoitu checkbox*/
+
+.checkBox {
+	display: block;
+	float: left;
+	width: 18px;
+	position: relative;
+	
+}
+
+.checkBox label {
+	cursor: pointer;
+	position: absolute;
+	width: 18px;
+	height: 18px;
+	top: 0;
+  	left: 0;
+	background: #f8f8f8;
+	border: 1px solid #ccc;
+	border-radius: 1px;
+}
+
+.checkBox label:after {
+	opacity: 0.2;
+	content: '';
+	position: absolute;
+	width: 7px;
+	height: 4px;
+	background: transparent;
+	top: 5px;
+	left: 4px;
+	border: 3px solid #777;
+	border-top: none;
+	border-right: none;
+
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+.checkBox label:hover::after {
+	opacity: 0.7;
+}
+
+.checkBox input[type=checkbox]:checked + label:after {
+	opacity: 1;
+}
+
+/*Checkboxin jälkeinen teksti*/
+
+.checkboxText {
+display: block;
+line-height: 18px;
+margin-left: 25px;
+-moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+}
+
+/*ULKOASUN "POHJA"*/
+
+	#main {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	background: #f5f5f5 url('../layout/background.jpg') 50% 60px;
+	}
+
+/*OTSIKKOALUE*/
+
+	#header {
+	width: 100%;
+	height: 60px;
+	margin: 0;
+	padding: 0;
+	background-color: #175e6c;
+	background-image: url('../layout/header_bg.png');
+	background-repeat: repeat-x;
+	border-bottom: 3px solid #FFF;
+	-moz-box-shadow:    0 1px 2px 0 #bbb;
+	-webkit-box-shadow: 0 1px 2px 0 #bbb;
+	box-shadow:         0 1px 2px 0 #bbb;
+	}
+	
+	#header .inner {
+	width: 960px;
+	margin: 0 auto;
+	padding: 0;
+	}
+
+	#header .logo {
+	width: 128x;
+	height: 43px;
+	margin-top: 8px;
+	float: left;
+	}
+	
+	#header .searchbox {
+	float: right;
+	margin: 12px 0 0 0;
+	padding: 0;
+	height: 35px;
+	width: 238px;
+	}
+	
+	#header .searchbox input[type="text"] {
+	border: 0;
+	border-top-left-radius: 2px;
+	border-bottom-left-radius: 2px;
+	height: 35px;
+	width: 200px;
+	margin: 0;
+	padding: 0 10px 0 10px;
+	-moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+	float: left;
+	}
+	
+	#header .searchbox .submit-search {
+	border-top-right-radius: 2px;
+	border-bottom-right-radius: 2px;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	border: 0;
+	height: 35px;
+	width: 38px;
+	margin: 0;
+	padding: 0;
+	color: transparent;
+	background: #FFAA00 url('../layout/search.png') no-repeat center;
+	float: left;
+	}
+	
+	#header .searchbox .submit-search:hover{
+	background-color: #FFC147;
+	}
+
+/*CONTAINER - Sisältää navigaation, sekä sisällön*/
+
+	#container {
+	width: 1000px;
+	margin: 0 auto;
+	clear: both;
+	padding: 0;
+	}
+	
+/*SIVUN SISÄLTÖ*/
+
+	#content {
+	width: 740px;
+	font-size: 14px;
+	min-height: 550px; /* sisällön vähimmäiskorkeus */
+	float: left;
+	padding: 0;
+	margin: 15px 0 40px 0;
+	}
+	
+	#content  .inside {
+	width: 740px;
+	margin: 0 auto;
+	padding: 20px;
+	background-color: #FFF;
+	border-radius: 2px;
+	overflow: hidden;
+	clear: both;
+	position: relative;
+	text-align: justify;
+	-moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+	-moz-box-shadow:    0 1px 2px 0 #bbb;
+	-webkit-box-shadow: 0 1px 2px 0 #bbb;
+	box-shadow:         0 1px 2px 0 #bbb;
+	}
+	
+	#content .inside .image {
+	border: 0;
+	margin: 10px 20px;
+	float: right;
+	border-radius: 3px;
+	}
+	
+	#content .inside ul li{
+	list-style-type: circle;
+	margin-left: 30px;
+	padding-top: 5px;
+	padding-bottom: 10px;
+	font-size: 15px;
+	}
+	
+/*NAVIGAATIO*/
+
+	#navigation {
+	width: 220px; /* Navigaation leveys */
+	padding: 0 10px;
+	float: left;
+	margin: 15px 0;
+	}
+
+	#navigation .inner {
+	background-color: #FFF;
+	border-radius: 2px;
+	padding-bottom: 5px;
+	-moz-box-shadow:    0 1px 2px 0 #bbb;
+	-webkit-box-shadow: 0 1px 2px 0 #bbb;
+	box-shadow:         0 1px 2px 0 #bbb;
+	margin-bottom: 14px;
+	}
+	
+	
+	/*Navigaation otsikot*/
+	
+	#navigation .head {
+	text-align: center;
+	text-transform: none;
+	color: #48505B;
+	font-weight: bold;
+	font-size: 16px;
+	width: 220px;
+	padding: 10px 0;
+	border-top-left-radius: 2px;
+	border-top-right-radius: 2px;
+	}
+	
+	#navigation .content ul li {
+	font-size: 14px;
+	font-weight: bold;
+	border-top: 1px solid #EAEDF2;
+	border-radius: 0;
+	}
+	
+	#navigation .content ul li:hover {
+	background-color: #f9f9f9;
+	}
+
+	#navigation .content ul li a {
+	height: 36px;
+	padding-top: 17px;
+	padding-left: 55px;
+	color: #B3B7C0;
+	text-transform: none;
+	display: block;
+	transition: padding .25s ease-in-out;
+	-moz-transition: padding .25s ease-in-out;
+	-webkit-transition: padding .25s ease-in-out;
+	}
+
+	#navigation .content ul li a:hover {
+	color: #FFBF33;
+	padding-left: 65px;
+	}
+
+	/*Navigaation linkkien kuvakkeet*/
+
+	#navigation .li-tidea {
+	background: transparent url('../layout/icon_tidea.png') no-repeat 8px 9px;
+	}
+	
+	#navigation .li-myideas {
+	background: transparent url('../layout/icon_myideas.png') no-repeat 8px 9px;
+	}
+	
+	#navigation .li-addnew {
+	background: transparent url('../layout/icon_addnew.png') no-repeat 8px 9px;
+	}
+	
+	#navigation .li-listall {
+	background: transparent url('../layout/icon_listall.png') no-repeat 8px 9px;
+	}
+	
+	#navigation .li-mydetails {
+	background: transparent url('../layout/icon_mydetails.png') no-repeat 8px 9px;
+	}
+	
+	#navigation .li-logout {
+	background: transparent url('../layout/icon_logout.png') no-repeat 8px 9px;
+	}
+	
+	/*Sivupalkin kirjautumisikkuna*/
+	
+	#navigation .login {
+	padding: 10px;
+	font-size: 12px;
+	}
+	
+	#navigation .login input[type="text"]{
+	width: 200px;
+	height: 35px;
+	background-color: #f2f2f2;
+	border: 0;
+	border-radius: 0px;
+	margin-bottom: 8px;
+	padding: 0 10px 0 35px;
+	background-image: url('../layout/login_pic.png');
+	background-repeat: no-repeat;
+	background-position: 5px 5px;
+	color: #555;
+	-moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+	}
+	
+	#navigation .login input[type="password"]{
+	width: 200px;
+	height: 35px;
+	background-color: #f2f2f2;
+	border: 0;
+	border-radius: 0px;
+	margin-bottom: 5px;
+	padding: 0 10px 0 35px;
+	background-image: url('../layout/login_pass_pic.png');
+	background-repeat: no-repeat;
+	background-position: left center;
+	color: #555;
+	-moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+	}
+	
+	#navigation .login input[type="submit"]{
+	width: 100%;
+	margin-top: 15px;
+	background-color: #49515B;
+	}
+	#navigation .login input[type="submit"]:hover{
+	background-color: #575F68;
+	}
+	
+	#navigation .login .register-text {
+	display: block;
+	padding-top: 25px;
+	text-align: center;
+	color: #777;
+	}
+	
+	#navigation .login .error {
+	float: left;
+	clear: both;
+	color: #E95934;
+	padding: 10px 0;
+	text-align: center;
+	}
+	
+/*ALAPALKKI*/
+
+	#footer {
+	width: 100%;
+	height: 300px;
+	clear: both;
+	padding: 0;
+	background-color: #516F7C;
+	background-image: url('../layout/footer_back.png');
+	background-repeat: repeat-x;
+	border-top: 3px solid #FFF;
+	}
+
+	#footer a {
+	font-weight: normal;
+	color: #FFF;
+	text-decoration: none;
+	font-size: 14px;
+	
+	}
+	
+	#footer a:hover {
+	color: #FCB635;
+	}
+	
+	#footer ul li a{
+	border-bottom: 1px solid #587A89;
+	padding: 5px 0;
+	display: block;
+	}
+	
+	#footer ul li h3{
+	color: #FFF;
+	border-bottom: 1px solid #587A89;
+	padding-bottom: 20px;
+	}
+
+	.footer_content {
+	color: #DEE1E5;
+	width: 960px;
+	height: 130px;
+	margin-left: auto;
+	margin-right: auto;
+	}
+	
+	.footer_content .left {
+	width: 170px;
+	float: left;
+	padding-top: 30px;
+	padding-bottom: 80px;
+	}
+	.footer_content .center{
+	width: 380px;
+	float: left;
+	margin: 0 120px;
+	background: url('../layout/footer_bg.png') no-repeat bottom center;
+	padding: 50px 0 100px 40px;
+	-moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+	}
+	.footer_content .right {
+	width: 170px;
+	float: right;
+	text-align: left;
+	padding-top: 30px;
+	padding-bottom: 80px;
+	}
+	
+/*PÄÄSIVU*/
+
+	.box330px {
+	width: 330px;
+	border: 1px solid #e3e3e3;
+	background-color: #FFF;
+	border-radius: 4px;
+	float: left;
+	margin: 10px;
+	-moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+	border-bottom: 2px solid #ccc;
+	}
+	
+	.box330px .element-bottom {
+	width: 100%;
+	font-weight: bold;
+	padding: 10px 10px;
+	display: block;
+	text-align: right;
+	float: left;
+	clear: both;
+	-moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+	}
+
+	.box330px .element{
+	width: 100%;
+	height: 35px;
+	border-bottom: 1px solid #eee;
+	font-weight: bold;
+	display: block;
+	float: left;
+	clear: both;
+	-moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+	color: #999;
+	}
+	
+	.box330px .element .name {
+	width: 240px;
+	height: 100%;
+	padding-left: 15px;
+	line-height: 35px;
+	float: left;
+	display: block;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow: ellipsis;
+	}
+	.box330px .element .name:hover{
+	border-left: 4px solid #00ABD1;
+	}
+	
+	.box330px .element .votes {
+	width: 55px;
+	float: right;
+	text-align: right;
+	margin-right: 7px;
+	line-height: 35px;
+	font-weight: normal;
+	font-size: 12px;
+	}
+	
+	.box330px .element .timestamp {
+	width: 55px;
+	float: right;
+	text-align: right;
+	margin-right: 7px;
+	line-height: 35px;
+	font-weight: normal;
+	font-size: 11px;
+	}
+	
+	.box330px .box-head {
+	border-bottom: 3px solid #eee;
+	background-color: #FFF;
+	font-size: 17px;
+	font-weight: bold;
+	text-align: center;
+	padding: 15px 0;
+	color: #00ABD1;
+	}
+
+	.box330px .box-content{
+	padding: 0;
+	}
+
+	/*suosituimmat ideat boksi*/
+	
+	#popularIdeas .box-head{
+	color: #FFAA00;
+	}
+	
+/*KONSEPTOINTI-SIVU*/
+	
+	.concept-box {
+	background: url('../layout/concept_bg.png') no-repeat top right;
+	}
+	
+	.concept-box h1{
+	padding: 140px 0 160px 50px;
+	font-size: 38px;
+	}
+	
+	.concept-box h2 {
+	padding: 10px 0;
+	margin-bottom: 30px;
+	border-bottom: 3px solid #dedede;
+	}
+	
+	.concept-box h4 {
+	padding: 0 0 10px 5px;
+	color: #888;
+	}
+	
+	.concept-box .header {
+	padding: 0 20px 20px 20px;
+	font-weight: bold;
+	border-bottom: 13px solid #FFF;
+	border-top: 7px solid #ddd;
+	background-color: #eee;
+	}
+	
+	.concept-box textarea {
+	width: 500px;
+	padding: 10px;
+	margin-bottom: 20px;
+	font-family: 'Lato', Georgia, sans serif;
+	font-size: 15px;
+	font-weight: bold;
+	border-radius: 2px;
+	border: 1px solid #ccc;
+	background-color: #FFF;
+	color: #555571;
+	resize: none;
+	}
+	
+	.concept-box .inner {
+	width: 650px;
+	padding: 0;
+	margin-left: 25px;
+	-moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+	float: left;
+	clear: both;
+	}
+	
+	.concept-box .inner .column {
+	float: left;
+	width: 100%;
+	padding: 0 20px 20px 20px;
+	background-color: #eee;
+	border-bottom: 13px solid #FFF;
+	border-top: 7px solid #ddd;
+	-moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+	}
+	
+	.concept-box .inner .addnew{
+	font-size: 13px;
+	background-color: #85C15D;
+	font-weight: bold;
+	color: #FFF;
+	padding: 13px 20px;
+	margin-top: 10px;
+	display: block;
+	float: left;
+	clear: both;
+	text-align: center;
+	transition: background-color .25s ease-in-out;
+	-moz-transition: background-color .25s ease-in-out;
+	-webkit-transition: background-color .25s ease-in-out;
+	clear: both;
+	}
+	
+	.concept-box .inner .addnew:hover {
+	background-color: #ACD38F;
+	}
+	
+	.concept-box .inner .submit-idea input {
+	float: right;
+	margin: 20px 0;
+	clear: both;
+	}
+	
+	#inputWrapper .row {
+	float: left;
+	width: 550px;
+	height: 35px;
+	clear: both;
+	padding: 0;
+	margin-bottom: 3px;
+	}
+	
+	#inputWrapper .inputfield{
+	width: 465px;
+	height: 35px;
+	padding: 0 5px 0 10px;
+	font-family: 'Lato', Georgia, sans serif;
+	font-size: 15px;
+	font-weight: bold;
+	border-top-left-radius: 1px;
+	border-bottom-left-radius: 1px;
+	color: #555;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+	-moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+	float: left;
+	}
+	
+	#inputWrapper .removeclass {
+	width: 35px;
+	height: 33px;
+	font-size: 10px;
+	background: #FD7649 url('../layout/button_close.png') no-repeat center;
+	border: 1px solid #FD7649;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+	margin:0;
+	float: left;
+	cursor: pointer;
+	transition: width .25s ease-in-out;
+	-moz-transition: width .25s ease-in-out;
+	-webkit-transition: width .25s ease-in-out;
+	}
+	
+	#inputWrapper .removeclass:hover {
+	width: 40px;
+	}
+	
+/*Huomiolaatikko*/
+/*Muokkaa ainoastaan #notificationia*/
+
+	#notification {
+	width: 250px;
+	position: absolute;
+	right: 40px;
+	bottom: 87px;
+	}
+
+	.noti {
+	font-size: 15px;
+	color: #d3d3d3;
+	font-weight: bold;
+	padding: 10px 20px 10px 20px;
+	border-radius: 3px;
+	background-color: #3c3c3c;
+	clear: both;
+	text-align: center;
+	}
+
+	.balloon {
+	height: 10px;
+	background: transparent url('../layout/balloon.png') no-repeat bottom right;
+	}
+
+/*Ideoiden listaussivun määritykset*/
+
+	#idea_listing .listitem {
+	float: left;
+	clear: both;
+	width: 100%;
+	margin-bottom: 5px;
+	}
+
+	#idea_listing .topbar {
+	width: 637px;
+	text-align: center;
+	float: left;
+	clear: both;
+	margin-bottom: 10px;
+	margin-left: 63px;
+	padding-bottom: 10px;
+	border-bottom: 7px solid #DAE8EA;
+	font-size: 15px;
+	}
+	#idea_listing .topbar a{
+	font-weight: bold;
+	text-decoration: underline;
+	cursor: pointer;
+	padding-bottom: 10px;
+	}
+	
+	#idea_listing .topbar .selected{
+	font-weight: normal;
+	text-decoration: none;
+	cursor: default;
+	background: url('../layout/icon_selected.png') no-repeat bottom center;
+	}
+	#idea_listing .topbar .selected:hover{
+	color: #48505B;
+	}
+
+	#idea_listing .position {
+	width: 55px;
+	height: 50px;
+	margin: 0;
+	float: right;
+	line-height: 50px;
+	text-align: right;
+	border-right: 7px solid #00ABD1;
+	color: #48505B;
+	font-weight: bold;
+	font-size: 17px;
+	padding-right: 8px;
+	white-space:nowrap; 
+	overflow: hidden;
+	text-overflow: ellipsis;
+	}
+
+	#idea_listing .ideabox {
+	width: 630px;
+	height: 50px;
+	border-right: 1px solid #ccc;
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #ccc;
+	float: right;
+	-moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+	}
+
+	#idea_listing .ideabox .name {
+	width: 369px;
+	height: 48px;
+	float: left;
+	line-height: 48px;
+	padding: 0 10px;
+	-moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+	font-weight: bold;
+	font-size: 15px;
+	}
+	#idea_listing .ideabox .name a{
+	white-space:nowrap; 
+	overflow: hidden;
+	text-overflow: ellipsis;
+	}
+	
+	#idea_listing .ideabox a{
+	color: #48505B;
+	}
+	#idea_listing .ideabox a:hover{
+	color: #FFBF75;
+	}
+	
+	#idea_listing .ideabox .name a{
+	display: block;
+	}
+	
+	#idea_listing .ideabox .votes {
+	width: 70px;
+	height: 48px;
+	float: right;
+	text-align: right;
+	line-height: 48px;
+	font-size: 13px;
+	white-space:nowrap; 
+	overflow:hidden; 
+	text-overflow: ellipsis;
+	font-weight: bold;
+	}
+	
+	#idea_listing .ideabox .likes {
+	width: 90px;
+	height: 48px;
+	float: right;
+	padding: 10px 5px;
+	border-right: 3px solid #FFBF75;
+	-moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+	font-size: 8px;
+	text-align: center;
+	}
+	
+	#idea_listing .ideabox .likes a{
+	margin-left: 6px;
+	}
+	
+	#idea_listing .ideabox .likes .votes {
+	font-size: 13px;
+	padding: 0;
+	line-height: 48px;
+	}
+	
+	#idea_listing .ideabox .publisher {
+	font-size: 12px;
+	width: 100px;
+	height: 48px;
+	line-height: 48px;
+	text-align: center;
+	float: right;
+	padding: 0 5px;
+	-moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+	white-space:nowrap; 
+	overflow:hidden; 
+	text-overflow: ellipsis;
+	}
+	
+	#idea_listing .pages {
+	width: 630px;
+	float: right;
+	clear: both;
+	margin: 20px auto;
+	text-align: center;
+	clear: both;
+	}
+	
+	#idea_listing .pages a{
+	font-size: 17px;
+	font-weight: bold;
+	padding: 4px 8px;
+	margin: 0 1px;
+	background-color: #00ABD1;
+	border-radius: 2px;
+	color: #FFF;
+	text-align: center;
+	}
+	#idea_listing .pages a:hover{
+	background-color: #444;
+	}
+	
+	#idea_listing .pages .pagenum{
+	width: 270px;
+	padding: 0;
+	display: block;
+	float: left;
+	}
+	
+	#idea_listing .pages .selected{
+	background-color: #444;
+	text-align: center;
+	}
+	
+	#idea_listing .pages .edgeArea{
+	width: 180px;
+	display: block;
+	padding-top: 1px;
+	}
+	
+	#idea_listing .pages .edge{
+	margin: 0;
+	background-color: #444;
+	font-weight: bold;
+	font-size: 13px;
+	}
+	#idea_listing .pages .edge:hover{
+	background-color: #FCB635;
+	}
+	
+	#idea_listing .total {
+	width: 630px;
+	float: right;
+	clear: both;
+	margin-top: 10px;
+	font-size: 13px;
+	text-align: center;
+	}
+	
+/*Kääntö-effekti*/
+
+	.rotate {
+	
+    -webkit-transition-duration: .4s;
+    -moz-transition-duration: .4s;
+    transition-duration: .4s;
+	
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    transition-property: transform;
+	
+	overflow:hidden;
+	}
+	
+	.rotate:hover {
+	
+	-webkit-transform:rotate(-40deg);
+    -moz-transform:rotate(-40deg);
+    -o-transform:rotate(-40deg);
+	transform: rotate(-40deg);
+	}
+	
+/*Sisällysluettelo*/
+
+.toc {
+width: 100%;
+padding: 8px 10px 0px 10px;
+border-left: 5px solid #00ABD1;
+float: left;
+clear: both;
+margin: 20px 0 20px 0;
+}
+
+.toc-text  {
+font-size: 14px;
+float: left;
+clear: both;
+padding-bottom: 8px;
+}
+
+/*Käyttöehdot-sivu*/
+
+.h1-terms{
+width: 350px;
+height: 100px;
+line-height: 100px;
+margin: 0 auto;
+background: url('../layout/icon_terms.png') no-repeat right center;
+border-bottom: 5px solid #eee;
+}
+
+/*Yksityisyydensuoja-sivu*/
+
+.h1-privacy{
+width: 420px;
+height: 100px;
+line-height: 100px;
+margin: 0 auto;
+background: url('../layout/icon_lock.png') no-repeat right center;
+border-bottom: 5px solid #eee;
+}
+
+/*Rekisteriseloste-sivu*/
+
+.h1-privacypolicy{
+width: 320px;
+height: 100px;
+line-height: 100px;
+margin: 0 auto;
+background: url('../layout/icon_lock.png') no-repeat right center;
+border-bottom: 5px solid #eee;
+}
+
+/*FAQ-sivu*/
+
+.h1-faq {
+width: 440px;
+height: 100px;
+line-height: 100px;
+margin: 0 auto;
+background: url('../layout/icon_question_big.png') no-repeat right center;
+}
+
+#faq a {
+font-weight: bold;
+color: #00ABD1;
+}
+
+#faq a:hover {
+color: #FFAA00;
+}
+
+#faq h3{
+border-left: 1px solid #ddd;
+border-bottom: 1px solid #ddd;
+border-top: 1px solid #f1f1f1;
+border-right: 1px solid #ddd;
+margin: 8px 0 0 0;
+padding: 10px 10px 10px 40px;
+font-size: 16px;
+background: url('../layout/icon_show.png') no-repeat left center;
+cursor: pointer;
+}
+
+#faq h3:hover{
+background-color: #f5f5f5;
+}
+
+#faq h3.close {
+background: url('../layout/icon_hide.png') no-repeat left center;
+}
+
+#faq .answer {
+display: none;
+padding: 5px 10px 10px 10px;
+border-left: 5px solid #FFAA00;
+border-right: 1px solid #ddd;
+border-bottom: 1px solid #ddd;
+margin: 0 0 0 10px;
+}
+
+	/*FAQ-sivun kysymyslomake*/
+	
+	#questionForm_info {
+	width: 630px;
+	margin: 0 auto;
+	padding-left: 70px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	background: url('../layout/icon_notice.png') no-repeat left center;
+	}
+	
+	#questionForm {
+		width: 630px;
+		height: 240px;
+		margin: 20px auto;
+		padding: 20px 20px;
+		border-left: 5px solid #ddd;
+		border-bottom: 1px solid #ddd;
+		border-right: 1px solid #ddd;
+		border-top: 1px solid #ededed;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+		font-weight: bold;
+	}
+	
+	#questionForm input[type="text"] {
+		float: left;
+		width: 470px;
+		border: 1px solid #ddd;
+		height: 30px;
+		padding: 0 5px;
+		margin: 0;
+	}
+	
+	#questionForm input[type="submit"] {
+		float: left;
+		clear: both;
+		margin-top: 20px;
+		margin-left: 100px;
+	}
+	
+	#questionForm textarea {
+		margin: 0;
+		padding: 5px;
+		float: left;
+		width: 482px;
+		height: 100px;
+		resize: none;
+		border: 1px solid #ddd;
+		margin-top: 10px;
+	}
+	
+	#questionForm .email{
+		width: 100px;
+		height: 22px;
+		float: left;
+		margin: 0;
+		color: #555;
+		padding: 4px 0 0 0;
+	}
+	
+	#questionForm .question{
+		width: 100px;
+		height: 100px;
+		float: left;
+		margin-top: 10px;
+		color: #555;
+	}
+
+/*Idea-sivu*/
+
+#ideapage {
+
+}
+
+#ideapage h1{
+overflow: hidden;
+text-overflow: ellipsis;
+text-align: left;
+border-bottom: 3px solid #eee;
+}
+
+#ideapage .left-column{
+float: left;
+width: 400px;
+}
+#ideapage .right-column{
+float: right;
+width: 250px;
+}
+
+#ideapage .feature {
+width: 100%;
+margin-bottom: 4px;
+padding: 10px;
+border: 1px solid #ddd;
+float: left;
+clear: both;
+}
+
+#ideapage .feature .name {
+width: 315px;
+float: left;
+line-height: 28px;
+padding-right: 15px;
+}
+
+#ideapage .feature .like {
+float: right;
+width: 28px;
+height: 100%;
+padding-right: 7px;
+}
+
+#ideapage .feature .dislike {
+float: right;
+height: 100%;
+width: 28px;
+}
+
+#ideapage .tags {
+width: 100%;
+float: right;
+}
+
+#ideapage .tags .tag{
+display: inline;
+float: left;
+padding: 6px 10px;
+margin: 3px;
+color: #FFF;
+background-color: #FFAA00;
+border-radius: 3px;
+}
+
+#ideapage .details {
+width: 100%;
+float: left;
+margin-top: 10px;
+border-top: 1px solid #eee;
+padding-top: 10px;
+}
+
+#ideapage .details .pic{
+float: left;
+}
+
+#ideapage .details .name{
+color: #00ABD1;
+float: left;
+line-height: 50px;
+padding-left: 6px;
+}
+
+#ideapage .details .timestamp{
+color: #c1c1c1;
+font-size: 12px;
+font-weight: bold;
+float: right;
+line-height: 50px;
+}
+
+#ideapage .join {
+margin: 10px 0;
+display: block;
+float: left;
+clear: both;
+padding: 10px 20px;
+background-color: #00ABD1;
+color: #FFF;
+transition: background-color .25s ease-in-out;
+-moz-transition: background-color .25s ease-in-out;
+-webkit-transition: background-color .25s ease-in-out;
+}
+
+#ideapage .join:hover {
+background-color: #21C0E0;
+}
+
+#ideapage .additional {
+width: 100%;
+float: left;
+}
+
+#ideapage .additional .additionalcontent{
+padding: 10px;
+width: 100%;
+border: 1px solid #ddd;
+}
+
+#ideapage .members {
+width: 100%;
+float: right;
+}
+
+#ideapage .members .memberlist{
+padding: 10px;
+width: 100%;
+border: 1px dashed #ccc;
+-moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+}
+
+/*HAKUTULOSTEN SIVU*/
+
+.searchResult {
+width: 100%;
+height: 40px;
+float: left;
+clear: both;
+margin: 3px 0;
+border: 1px solid #ddd;
+-moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+}
+.searchResult a{
+display: block;
+line-height: 38px;
+padding: 0 10px;
+font-size: 15px;
+}
+.searchResult img{
+padding: 0 5px;
+margin: 0;
+vertical-align: middle;
+}
+
+/*REKISTERÖITYMISSIVU*/
+
+#registerationForm {
+width: 500px;
+margin: 0 auto;
+}
+#registerationForm h3{
+text-align: center;
+padding: 15px 0;
+margin: 0;
+color: #999;
+border-left: 1px solid #ddd;
+border-right: 1px solid #ddd;
+border-top: 1px solid #ddd;
+}
+
+#registerationForm .reg-content{
+float: left;
+border-left: 1px solid #ddd;
+border-right: 1px solid #ddd;
+border-bottom: 1px solid #ddd;
+padding: 0 10px 20px 10px;
+background-color: #f4f4f4;
+}
+
+#registerationForm .reg-content span{
+width: 120px;
+height: 30px;
+line-height: 30px;
+float: left;
+display: block;
+font-weight: bold;
+margin-top: 20px;
+margin-bottom: 5px;
+padding: 3px 10px 0 0;
+text-align: right;
+color: #999;
+}
+
+#registerationForm .reg-content .row {
+float: left;
+clear: both;
+width: 100%;
+}
+
+#registerationForm .reg-username {
+width: 298px;
+height: 30px;
+float: right;
+padding: 3px 6px;
+background-color: #FFF;
+border: 1px solid #DDD;
+margin-top: 20px;
+}
+#registerationForm .reg-passwd {
+width: 298px;
+height: 30px;
+float: right;
+padding: 3px 6px;
+background-color: #FFF;
+border: 1px solid #DDD;
+margin-top: 20px;
+}
+#registerationForm .reg-confirm {
+width: 298px;
+height: 30px;
+float: right;
+padding: 3px 6px;
+background-color: #FFF;
+border: 1px solid #DDD;
+margin-top: 20px;
+}
+#registerationForm .reg-email {
+width: 298px;
+height: 30px;
+float: right;
+padding: 3px 6px;
+background-color: #FFF;
+border: 1px solid #DDD;
+margin-top: 20px;
+}
+#registerationForm .reg-agree {
+float: left;
+clear: both;
+margin-top: 10px;
+}
+#registerationForm .reg-submit {
+float: left;
+clear: both;
+margin-top: 20px;
+margin-bottom: 60px;
+}
+
+#registerationForm .notification{
+width: 100%;
+float: left;
+clear: both;
+font-size: 12px;
+color: #aaa;
+text-align: right;
+margin: 0;
+padding: 0 40px 0 0;
+-moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+display: none;
+}
+
+#registerationForm #icon {
+float: right;
+width: 36px;
+height: 36px;
+background-repeat: no-repeat;
+background-position: center;
+margin-top: 20px;
+}
+
+#registerationForm #notification {
+width: 230px;
+position: absolute;
+left: 10px;
+bottom: 125px;
+}
